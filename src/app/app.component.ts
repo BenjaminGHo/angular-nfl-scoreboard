@@ -12,7 +12,7 @@ interface Course {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'NFL Scoreboard - Angular';
+  title = 'NFL Scoreboard';
   nfl: Nfl[];
   jsonReturnedBack: any
   games: any
