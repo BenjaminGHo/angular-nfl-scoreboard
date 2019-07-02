@@ -1,4 +1,3 @@
 export interface Nfl {
-    id: number;
-    name: string;
+    gms: any;
   }

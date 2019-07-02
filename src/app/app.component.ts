@@ -14,6 +14,8 @@ interface Course {
 export class AppComponent {
   title = 'NFL Scoreboard - Angular';
   nfl: Nfl[];
+  jsonReturnedBack: any
+  games: any
 
   constructor(private nflService: NFLService) {}
 
@@ -23,8 +25,14 @@ export class AppComponent {
 
   getNFLService(): void {
     this.nflService.getNFLGames()
-    .subscribe(nflGames => console.log(nflGames));
+    .subscribe(nflGames => {
+      this.jsonReturnedBack = nflGames;
+      this.games =  this.jsonReturnedBack.gms;
+      console.log(nflGames);
+    });
       console.log("this is done!");
   }
+
+ 
 
 }
