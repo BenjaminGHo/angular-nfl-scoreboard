@@ -29,7 +29,12 @@
 </div>
 
 <div *ngFor="let item of gameReturnedBack">
-  {{item["posteam"]}}
+  {{item.posteam}}
+    <div *ngFor="let play of [item.plays]">
+      <div *ngFor="let singlePlay of [play]">
+        {{singlePlay}}
+        </div>
+    </div>
 </div>
 
 
