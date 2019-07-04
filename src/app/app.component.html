@@ -28,5 +28,9 @@
   <p><strong>Date:</strong> {{item.eid}}</p>
 </div>
 
+<div *ngFor="let item of gameReturnedBack">
+  {{item["posteam"]}}
+</div>
+
 
 <router-outlet></router-outlet>

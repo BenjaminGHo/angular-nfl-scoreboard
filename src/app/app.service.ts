@@ -6,14 +6,14 @@ import { catchError } from 'rxjs/operators';
 
 import { Nfl } from './nfl';
 
-
 @Injectable()
 export class NFLService {
   nflURL = 'http://www.nfl.com/liveupdate/scorestrip/ss.json';  // URL to web api
+  gameURL = 'http://www.nfl.com/liveupdate/game-center/2017012200/2017012200_gtd.json';
 
   constructor(
-    private http: HttpClient)
-    {  }
+    private http: HttpClient
+  ){}
 
   /** GET NFLGames from the server */
   getNFLGames (): Observable<Nfl[]> {
@@ -25,6 +25,17 @@ export class NFLService {
         catchError(this.handleError) // then handle the error
       );
   }
+
+  /** GET NFLGames from the server */
+  getGame(): Observable<any[]> {
+
+      console.log("Beginning Service!");
+  
+      return this.http.get<any[]>(this.gameURL)
+        .pipe(
+          catchError(this.handleError) // then handle the error
+        );
+    }
 
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
