@@ -13,6 +13,7 @@ export class AppComponent {
   jsonReturnedBack: any
   gameReturnedBack: any
   games: any
+  Object = Object
 
   constructor(private nflService: NFLService) {}
 
