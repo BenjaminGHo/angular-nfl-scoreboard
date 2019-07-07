@@ -49,4 +49,11 @@ export class AppComponent {
     });
       //console.log("this is done!");
   }
+
+  toggle(name,time){
+    console.log("hide!");
+    console.log(name);
+    console.log(time);
+  }
+
 }

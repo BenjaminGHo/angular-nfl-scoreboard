@@ -31,13 +31,18 @@
 
 <div *ngFor="let item of gameReturnedBack">
     {{item.posteam}}
-    <div *ngFor="let key of Object.keys(item.plays)">
-        {{item.plays[key].desc}}
+    <div id="{{item.posteam}}{{item.postime}}">
+      <div *ngFor="let key of Object.keys(item.plays)">
+          {{item.plays[key].desc}}
+      </div>
+      <strong>
+        {{item.result}} ({{item.qtr}} Quarter)
+      </strong>
+      <p></p>
     </div>
-    <strong>
-      {{item.result}} ({{item.qtr}} Quarter)
-    </strong>
-    <p></p>
+    <div>
+      <button (click)="toggle(item.posteam,item.postime)">Show/Hide</button>
+    </div>
 </div>
 
 <router-outlet></router-outlet>
