@@ -33,7 +33,7 @@
     {{item.posteam}}
     <div id="{{item.posteam}}{{item.postime}}">
       <div *ngFor="let key of Object.keys(item.plays)">
-          {{item.plays[key].desc}}
+          {{item.plays[key].desc}} <strong>{{item.plays[key].note}}</strong>
       </div>
       <strong>
         {{item.result}} ({{item.qtr}} Quarter)
