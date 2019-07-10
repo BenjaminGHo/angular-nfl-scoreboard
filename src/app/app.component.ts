@@ -42,18 +42,13 @@ export class AppComponent {
       //console.log(evilResponseProps);
       this.gameReturnedBack = [];
       // Step 3. Iterate throw all keys.
-
+      console.log(evilResponseProps);
       for (var prop of evilResponseProps) { 
         this.gameReturnedBack.push(gameInfo[firstKey]["drives"][prop]);
+        console.log(prop);
       }
     });
       //console.log("this is done!");
-  }
-
-  toggle(name,time){
-    console.log("hide!");
-    console.log(name);
-    console.log(time);
   }
 
 }

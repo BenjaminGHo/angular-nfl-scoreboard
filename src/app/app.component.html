@@ -1,5 +1,8 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <div style="text-align:center">
   <h1>
     Welcome to {{ title }}!
@@ -23,6 +26,7 @@
 <!--
 <input type="checkbox" id="nfLScores"  (click)="getNFLService()">
 -->
+
 <div *ngFor="let item of games">
   <p><strong>Home Team:</strong> {{item.hnn}}</p>
   <p><strong>Visit Team:</strong> {{item.vnn}}</p>
@@ -30,19 +34,19 @@
 </div>
 
 <div *ngFor="let item of gameReturnedBack">
-    {{item.posteam}}
+  <div id="container">
+    <h2>{{item.posteam}} (time taken: {{item.postime}})</h2>
     <div id="{{item.posteam}}{{item.postime}}">
-      <div *ngFor="let key of Object.keys(item.plays)">
-          {{item.plays[key].desc}} <strong>{{item.plays[key].note}}</strong>
-      </div>
+      <ul class="list-group list-group-flush">
+        <li *ngFor="let key of Object.keys(item.plays)" class="list-group-item">
+            {{item.plays[key].desc}} <strong>{{item.plays[key].note}}</strong>
+        </li>
+      </ul>
       <strong>
-        {{item.result}} ({{item.qtr}} Quarter)
+       Result: {{item.result}} ({{item.qtr}} Quarter)
       </strong>
-      <p></p>
     </div>
-    <div>
-      <button (click)="toggle(item.posteam,item.postime)">Show/Hide</button>
-    </div>
+  </div>
 </div>
 
 <router-outlet></router-outlet>
