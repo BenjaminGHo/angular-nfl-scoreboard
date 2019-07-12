@@ -37,11 +37,13 @@ export class AppComponent {
     .subscribe(gameInfo => {
       console.log(gameInfo);
       var firstKey = (Object.keys(gameInfo)[0]);
+      console.log("first key: " + firstKey);
       // Step 2. Create an empty array.
-      let evilResponseProps = Object.keys(gameInfo[firstKey]["drives"]);
+      let keyList = Object.keys(gameInfo[firstKey]["drives"]);
+      console.log(keyList);
       this.gameReturnedBack = [];
       // Step 3. Iterate throw all keys.
-      for (var prop of evilResponseProps) { 
+      for (var prop of keyList) { 
         if (prop != 'crntdrv')  // not sure why, but there is 'crntdrv' key at the end that displays number of drives
           this.gameReturnedBack.push(gameInfo[firstKey]["drives"][prop]);
       }
