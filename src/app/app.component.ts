@@ -27,9 +27,7 @@ export class AppComponent {
     .subscribe(nflGames => {
       this.jsonReturnedBack = nflGames;
       this.games =  this.jsonReturnedBack.gms;
-      //console.log(nflGames);
     });
-      //console.log("this is done!");
   }
 
   getGameService(): void {
@@ -49,5 +47,4 @@ export class AppComponent {
       }
     });
   }
-
 }
