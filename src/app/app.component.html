@@ -18,7 +18,7 @@
 
 <div *ngFor="let item of gameReturnedBack">
   <div id="container">
-    <h2>{{item.posteam}} (time taken: {{item.postime}})</h2>
+    <h2>{{item.posteam}} (time taken: {{item.postime}}, #plays: {{item.numplays}})</h2>
     <div id="{{item.posteam}}{{item.postime}}">
       <ul class="list-group list-group-flush">
         <li *ngFor="let key of Object.keys(item.plays)" class="list-group-item">
