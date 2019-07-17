@@ -9,7 +9,9 @@ import { Nfl } from './nfl';
 @Injectable()
 export class NFLService {
   nflURL = 'http://www.nfl.com/liveupdate/scorestrip/ss.json';  // URL to web api
-  gameURL = 'http://www.nfl.com/liveupdate/game-center/2017012200/2017012200_gtd.json';
+  gameURL = 'http://www.nfl.com/liveupdate/game-center/2018090905/2018090905_gtd.json';
+
+  moreURL = 'http://www.nfl.com/ajax/scorestrip?season=2019&seasonType=PRE&week=1'
 
   constructor(
     private http: HttpClient
