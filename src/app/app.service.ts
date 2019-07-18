@@ -10,8 +10,8 @@ import { Nfl } from './nfl';
 export class NFLService {
   nflURL = 'http://www.nfl.com/liveupdate/scorestrip/ss.json';  // URL to web api
   gameURL = 'http://www.nfl.com/liveupdate/game-center/2018090905/2018090905_gtd.json';
-
   moreURL = 'http://www.nfl.com/ajax/scorestrip?season=2019&seasonType=PRE&week=1'
+  immages ='https://www.bountysource.com/issues/3570617-link-to-images'
 
   constructor(
     private http: HttpClient

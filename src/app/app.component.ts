@@ -12,6 +12,7 @@ export class AppComponent {
   nfl: Nfl[];
   jsonReturnedBack: any
   gameReturnedBack: any
+  scoringSummary: any
   games: any
   Object = Object
 
@@ -35,16 +36,25 @@ export class AppComponent {
     .subscribe(gameInfo => {
       console.log(gameInfo);
       var firstKey = (Object.keys(gameInfo)[0]);
-      console.log("first key: " + firstKey);
       // Step 2. Create an empty array.
       let keyList = Object.keys(gameInfo[firstKey]["drives"]);
-      console.log(keyList);
       this.gameReturnedBack = [];
       // Step 3. Iterate throw all keys.
       for (var prop of keyList) { 
         if (prop != 'crntdrv')  // not sure why, but there is 'crntdrv' key at the end that displays number of drives
           this.gameReturnedBack.push(gameInfo[firstKey]["drives"][prop]);
       }
+
+      keyList = Object.keys(gameInfo[firstKey]["scrsummary"]);
+
+      this.scoringSummary = [];
+      // Step 3. Iterate throw all keys.
+      for (var prop of keyList) { 
+        if (prop != 'crntdrv')  // not sure why, but there is 'crntdrv' key at the end that displays number of drives
+          this.scoringSummary.push(gameInfo[firstKey]["scrsummary"][prop]);
+      }
+
+
     });
   }
 }

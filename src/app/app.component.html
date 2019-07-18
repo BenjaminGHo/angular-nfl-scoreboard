@@ -16,9 +16,18 @@
   <p><strong>Date:</strong> {{item.eid}}</p>
 </div>
 
+<div id="container">
+  <h2>Scoring Summary</h2>
+  <div *ngFor="let item of scoringSummary">
+    <li>
+      {{item.desc}}
+    </li>
+  </div>
+</div>
+
 <div *ngFor="let item of gameReturnedBack">
   <div id="container">
-    <h2>{{item.posteam}} (time taken: {{item.postime}}, #plays: {{item.numplays}})</h2>
+    <h2>{{item.posteam}} (time taken: {{item.postime}}, # of plays: {{item.numplays}})</h2>
     <div id="{{item.posteam}}{{item.postime}}">
       <ul class="list-group list-group-flush">
         <li *ngFor="let key of Object.keys(item.plays)" class="list-group-item">
