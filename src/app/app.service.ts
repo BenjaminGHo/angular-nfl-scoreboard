@@ -12,6 +12,11 @@ export class NFLService {
   gameURL = 'http://www.nfl.com/liveupdate/game-center/2018090905/2018090905_gtd.json';
   moreURL = 'http://www.nfl.com/ajax/scorestrip?season=2019&seasonType=PRE&week=1'
   immages ='https://www.bountysource.com/issues/3570617-link-to-images'
+  /*
+   http://static.nfl.com/static/content/public/static/img/getty/headshot/B/R/A/BRA371156.jpg
+  http://static.nfl.com/static/content/public/static/img/getty/headshot/A/B/D/ABD647726.jpg
+  ESB ID: ABD647726
+	GSIS ID: 00-0032104*/
 
   constructor(
     private http: HttpClient
