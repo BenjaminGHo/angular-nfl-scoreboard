@@ -17,12 +17,12 @@
   </div>
   -->
   <div id="container">
-      <h6 class="border-bottom border-gray pb-2 mb-0">Scoring Summary</h6>
+      <h2 class="border-bottom border-gray pb-2 mb-0"><div style="text-align:center">Scoring Summary</div></h2>
 
       <div *ngFor="let item of scoringSummary">
           <div class="media text-muted pt-3">
-          {{item.desc}}
-</div>
+            {{item.desc}}
+          </div>
       </div>
   </div>
 
@@ -31,7 +31,7 @@
       <h2>{{item.posteam}} (time taken: {{item.postime}}, # of plays: {{item.numplays}})</h2>
       <div id="{{item.posteam}}{{item.postime}}">
         <ul class="list-group list-group-flush">
-          <li *ngFor="let key of Object.keys(item.plays)" class="list-group-item">
+          <li *ngFor="let key of Object.keys(item.plays); trackBy: trackElement" class="list-group-item">
               {{item.plays[key].desc}} <strong>{{item.plays[key].note}}</strong>
           </li>
         </ul>
