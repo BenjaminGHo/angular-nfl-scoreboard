@@ -1,3 +1,28 @@
 #container {
     padding: 20px;
 }
+
+.splashHeader {
+    font-family: sans-serif;
+    color: #FFF;
+}
+
+
+.bg-cover {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("/assets/42.jpg");
+    height: 500px;
+}
+
+#main-container {
+    position: relative;
+    z-index: 2;
+}
+
+#main-container .card {
+    margin: 50px;
+}

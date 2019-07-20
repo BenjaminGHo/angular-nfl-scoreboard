@@ -1,29 +1,20 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Football Cartoon" src="./assets/football.jpg">
-</div>
 
+<style></style>
 
-<div class="container">
-  <!--
-  <div *ngFor="let item of games">
-    <p><strong>Home Team:</strong> {{item.hnn}}</p>
-    <p><strong>Visit Team:</strong> {{item.vnn}}</p>
-    <p><strong>Date:</strong> {{item.eid}}</p>
-  </div>
-  -->
-  <div id="container">
-      <h6 class="border-bottom border-gray pb-2 mb-0">Scoring Summary</h6>
+<div class="bg-cover"></div>
+<div id="main-container">
 
-      <div *ngFor="let item of scoringSummary">
-          <div class="media text-muted pt-3">
-          {{item.desc}}
-</div>
+  <div class="card">
+      <div class="card-header">
+          Scoring Summary
       </div>
+      <ul *ngFor="let item of scoringSummary" class="list-group list-group-flush">
+          <li class="list-group-item">
+          {{item.desc}}
+          </li>
+      </ul>
   </div>
 
   <div *ngFor="let item of gameReturnedBack">
@@ -36,7 +27,7 @@
           </li>
         </ul>
         <strong>
-        Result: {{item.result}} ({{item.qtr}} Quarter)
+          Result: {{item.result}} ({{item.qtr}} Quarter)
         </strong>
       </div>
     </div>
