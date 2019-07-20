@@ -53,8 +53,12 @@ export class AppComponent {
         if (prop != 'crntdrv')  // not sure why, but there is 'crntdrv' key at the end that displays number of drives
           this.scoringSummary.push(gameInfo[firstKey]["scrsummary"][prop]);
       }
-
-
     });
   }
+  
+  trackElement(index: number, element: any) {
+    console.log(element);
+    return element ? element.guid : null
+  }
+
 }
