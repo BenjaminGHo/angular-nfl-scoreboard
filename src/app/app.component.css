@@ -7,7 +7,6 @@
     color: #FFF;
 }
 
-
 .bg-cover {
     position: absolute;
     top: 0;
@@ -25,4 +24,10 @@
 
 #main-container .card {
     margin: 50px;
+}
+
+#main-container .container {
+    background-color: #e1e1e1;
+    margin-bottom: 25px;
+    border-radius: 10px;
 }
