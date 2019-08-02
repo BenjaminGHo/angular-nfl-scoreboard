@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NFLService } from './app.service';
 import { Nfl } from './nfl';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -16,11 +17,21 @@ export class AppComponent {
   games: any
   Object = Object
 
-  constructor(private nflService: NFLService) {}
+  constructor(
+    private nflService: NFLService,
+    private http: HttpClient
+  ) {}
 
   ngOnInit() {
     this.getNFLService();
     this.getGameService();
+
+    /* https://jsonplaceholder.typicode.com/ */
+    this.http.get('https://jsonplaceholder.typicode.com/todos/1').subscribe(data => {
+      console.log(data);
+    });
+
+
   }
 
   getNFLService(): void {
@@ -57,7 +68,7 @@ export class AppComponent {
   }
   
   trackElement(index: number, element: any) {
-    console.log(element);
+    //console.log(element);
     return element ? element.guid : null
   }
 
